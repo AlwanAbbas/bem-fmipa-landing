@@ -3,14 +3,14 @@ export const strukturOrganisasi = {
     jabatan: "Gubernur BEM",
     nama: "Trio Putra Kusuma",
     prodi: "Informatika",
-    foto: "../../public/images/ketua.jpg",
+    foto: "/images/ketua.jpg",
   },
 
   wakil: {
     jabatan: "Wakil Gubernur BEM",
     nama: "Ghani Arif Baehaqi",
     prodi: "Informatika",
-    foto: "../../public/images/wakil.jpg",
+    foto: "/images/wakil.jpg",
   },
 
   inti: [
