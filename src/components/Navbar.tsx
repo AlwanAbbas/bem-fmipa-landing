@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            src="../src/assets/images/bemFM.webp"
+            src="/src/assets/images/bemFM.webp"
             alt="Logo BEM"
             className="h-10 w-10 rounded-full border border-yellow-400"
           />

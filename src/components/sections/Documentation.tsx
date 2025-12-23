@@ -40,7 +40,7 @@ export default function Documentation() {
         >
           <DocumentationSlider />
         </motion.div>
-
+        <p className="mt-4 text-slate-300 mx-auto mb-14 max-w-3xl text-center">More Documentation in Instagram <a href="https://www.instagram.com/fmikom.unugha/" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">@bemfmikom</a> and TikTok <a href="https://www.tiktok.com/@bem.fmikom.unugha?lang=id-ID" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:underline">@bemfmikom</a></p>
       </div>
     </section>
   )
