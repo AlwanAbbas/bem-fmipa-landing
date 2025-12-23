@@ -7,17 +7,21 @@ export default function Documentation() {
       id="documentation"
       className="relative py-24 text-white"
     >
-      {/* Overlay gelap halus */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Background overlay 40% */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
       <div className="relative z-10 container mx-auto px-4">
 
+        {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="
+            mx-auto mb-14 max-w-3xl
+            text-center
+          "
         >
           <h2 className="text-3xl font-bold sm:text-4xl">
             Dokumentasi Kegiatan
@@ -27,7 +31,15 @@ export default function Documentation() {
           </p>
         </motion.div>
 
-        <DocumentationSlider />
+        {/* ================= SLIDER ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <DocumentationSlider />
+        </motion.div>
 
       </div>
     </section>

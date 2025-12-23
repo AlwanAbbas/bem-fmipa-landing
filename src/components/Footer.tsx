@@ -1,115 +1,148 @@
 import { Instagram, Mail, MapPin, Globe } from "lucide-react"
 import TikTokIcon from "@/components/icons/TikTokIcon"
 
+const quickLinks = [
+  { label: "Beranda", href: "#home" },
+  { label: "Tentang Kami", href: "#about" },
+  { label: "Struktur Organisasi", href: "#structure" },
+  { label: "Program Kerja", href: "#program" },
+  { label: "Dokumentasi", href: "#documentation" },
+]
+
 export default function Footer() {
   return (
-    <footer className="border-t bg-slate-900 text-slate-300">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="relative bg-slate-950 text-slate-300 overflow-hidden">
 
-        <div className="grid gap-10 md:grid-cols-3">
+      {/* === BACKGROUND EFFECT === */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full bg-yellow-400/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 bg-cyan-400/10 blur-[120px]" />
+      </div>
 
-          {/* Identitas */}
+      <div className="container relative mx-auto px-4 py-28">
+
+        {/* ================= TOP GRID ================= */}
+        <div className="grid gap-20 lg:grid-cols-3">
+
+          {/* BRAND / ABOUT */}
           <div>
-            <h3 className="text-xl font-bold text-white">
+            <h2 className="text-3xl font-bold tracking-wide text-white">
               BEM FMIKOM
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed">
+            </h2>
+
+            <div className="mt-3 h-1 w-20 rounded-full bg-linear-to-r from-yellow-400 to-yellow-600" />
+
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-slate-400">
               Badan Eksekutif Mahasiswa Fakultas Matematika dan Ilmu Komputer
-              sebagai wadah aspirasi dan pengembangan potensi mahasiswa.
+              Universitas Nahdlatul Ulama Al-Ghazali Cilacap sebagai wadah
+              kepemimpinan, aspirasi, dan inovasi mahasiswa berbasis
+              intelektual dan moral.
             </p>
           </div>
 
-          {/* Navigasi */}
+          {/* QUICK NAV */}
           <div>
-            <h4 className="mb-4 font-semibold text-white">
-              Navigasi
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="hover:text-white">Beranda</a></li>
-              <li><a href="#about" className="hover:text-white">Tentang</a></li>
-              <li><a href="#structure" className="hover:text-white">Struktur</a></li>
-              <li><a href="#program" className="hover:text-white">Program Kerja</a></li>
-              <li><a href="#documentation" className="hover:text-white">Dokumentasi</a></li>
+            <h3 className="mb-6 text-lg font-semibold text-white">
+              Navigasi Utama
+            </h3>
+
+            <ul className="space-y-4 text-sm">
+              {quickLinks.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="group flex items-center gap-3 transition"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-yellow-400 opacity-0 transition group-hover:opacity-100" />
+                    <span className="group-hover:text-white">
+                      {item.label}
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Kontak & Informasi */}
+          {/* CONTACT */}
           <div>
-            <h4 className="mb-4 font-semibold text-white">
-              Kontak & Informasi
-            </h4>
-            <ul className="space-y-4 text-sm">
+            <h3 className="mb-6 text-lg font-semibold text-white">
+              Kontak Resmi
+            </h3>
 
-              {/* Email */}
-              <li className="flex items-start gap-2">
-                <Mail className="mt-1 h-4 w-4" />
+            <ul className="space-y-5 text-sm text-slate-400">
+              <li className="flex gap-4">
+                <Mail className="h-5 w-5 text-yellow-400" />
                 <span>bemfmikom@unugha.id</span>
               </li>
 
-              {/* Alamat */}
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-1 h-4 w-4" />
+              <li className="flex gap-4">
+                <MapPin className="h-5 w-5 text-yellow-400" />
                 <span>
-                  Jl. Kemerdekaan Barat No.17, Gligir, Kesugihan Kidul,
-                  Kec. Kesugihan, Kabupaten Cilacap,
-                  Jawa Tengah 53274
+                  Jl. Kemerdekaan Barat No.17, Kesugihan Kidul,
+                  Kabupaten Cilacap, Jawa Tengah 53274
                 </span>
               </li>
 
-              {/* Website Kampus */}
-              <li className="flex items-center gap-2">
-                <Globe className="h-4 w-4" />
-                <a
-                  href="https://unugha.ac.id/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  UNUGHA
-                </a>
-              </li>
-
-              {/* Sosial Media */}
               <li className="flex gap-4">
+                <Globe className="h-5 w-5 text-yellow-400" />
                 <a
-                  href="https://www.instagram.com/fmikom.unugha/"
+                  href="https://unugha.ac.id"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white transition"
+                  className="transition hover:text-white"
                 >
-                  <Instagram className="h-5 w-5" />
-                </a>
-
-                <a
-                  href="https://www.tiktok.com/@bem.fmikom.unugha?lang=id-ID"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition"
-                >
-                  <TikTokIcon className="h-5 w-5 text-white hover:text-cyan-400" />
+                  www.unugha.ac.id
                 </a>
               </li>
             </ul>
-            {/* Google Maps Mini */}
-            <div className="mt-4 overflow-hidden rounded-lg border border-slate-700">
+
+            {/* SOCIAL ICON */}
+            <div className="mt-8 flex gap-4">
+              <a
+                href="https://www.instagram.com/fmikom.unugha/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-full border border-white/15 p-3 transition hover:border-yellow-400"
+              >
+                <Instagram className="h-5 w-5 transition group-hover:text-yellow-400" />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@bem.fmikom.unugha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-full border border-white/15 p-3 transition hover:border-cyan-400"
+              >
+                <TikTokIcon className="h-5 w-5 transition group-hover:text-cyan-400" />
+              </a>
+            </div>
+
+            {/* MAP */}
+            <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
               <iframe
                 title="Lokasi BEM FMIKOM"
                 src="https://www.google.com/maps?q=Jl.%20Kemerdekaan%20Barat%20No.17%20Kesugihan%20Cilacap&output=embed"
-                width="100%"
-                height="160"
+                height="180"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="block"
+                className="w-full grayscale transition duration-500 hover:grayscale-0"
               />
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
-          © {new Date().getFullYear()} BEM FMIKOM. All rights reserved.
-        </div>
+        {/* ================= BOTTOM BAR ================= */}
+        <div className="mt-20 flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-xs text-slate-500">
+          <span>
+            © {new Date().getFullYear()}{" "}
+            <span className="font-medium text-white">
+              BEM FMIKOM UNUGHA
+            </span>
+          </span>
 
+          <span className="tracking-wide">
+            Built with ❤️ by Mahasiswa FMIKOM
+          </span>
+        </div>
       </div>
     </footer>
   )

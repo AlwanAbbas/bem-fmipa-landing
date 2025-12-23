@@ -14,11 +14,11 @@ export const dokumentasi = [
     deskripsi: "FPelatihan desain antarmuka pengguna (UI) dan pengalaman pengguna (UX) untuk mahasiswa FMIKOM.",
     image: "../../public/images/dokumentasi/bootcamp.jpg",
   },
-  {
-    judul: "FMIKOM Goes TO School",
-    deskripsi: "Kegiatan sosialisasi dan edukasi kepada siswa-siswi di sekolah-sekolah.",
-    image: "https://via.placeholder.com/600x400",
-  },
+  // {
+  //   judul: "FMIKOM Goes TO School",
+  //   deskripsi: "Kegiatan sosialisasi dan edukasi kepada siswa-siswi di sekolah-sekolah.",
+  //   image: "https://via.placeholder.com/600x400",
+  // },
   {
     judul: "QTIME",
     deskripsi: "Kegiatan seperti family gathering untuk pengurus BEM FMIKOM.",

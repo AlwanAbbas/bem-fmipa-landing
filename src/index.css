@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+/* ================================
+   PREMIUM CAMPUS NAVBAR GRADIENT
+================================ */
+
+/* ================================
+   CLEAN GLASS NAVBAR CAMPUS
+================================ */
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar-shadow {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #facc15; /* kuning aksen */
+  transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: all .3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}

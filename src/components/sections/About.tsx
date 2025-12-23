@@ -10,7 +10,7 @@ export default function About() {
   return (
     <SectionWrapper
       id="about"
-      overlay="soft"
+      overlay="dark"
       className="py-100"
     >
       <div className="container mx-auto px-4">
@@ -32,7 +32,7 @@ export default function About() {
         <div className="grid gap-8 md:grid-cols-2">
 
           {/* Visi */}
-          <Card className="border border-yellow-300/40 bg-white/85 backdrop-blur-md shadow-xl">
+          <Card className="border border-yellow-300/40 bg-white/45 backdrop-blur-md shadow-xl">
             <CardHeader>
               <CardTitle className="text-slate-900">
                 Visi
@@ -48,7 +48,7 @@ export default function About() {
           </Card>
 
           {/* Misi */}
-          <Card className="border border-yellow-300/40 bg-white/85 backdrop-blur-md shadow-xl">
+          <Card className="border border-yellow-300/40 bg-white/45 backdrop-blur-md shadow-xl">
             <CardHeader>
               <CardTitle className="text-slate-900">
                 Misi
