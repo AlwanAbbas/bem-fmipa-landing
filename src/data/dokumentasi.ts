@@ -2,7 +2,7 @@ export const dokumentasi = [
   {
     judul: "Pelantikan Pengurus BEM FMIKOM 2025",
     deskripsi: "Kegiatan pelantikan pengurus BEM FMIKOM Periode 2025/2026.",
-    image: "/images/dokumentasi/pelantikan.jpg",
+    image: "/images/dokumentasi/PELANTIKAN2025.JPG",
   },
   {
     judul: "Hasta Karya Technology",
@@ -37,6 +37,6 @@ export const dokumentasi = [
   {
     judul: "FMIKOM CONNECT 2025",
     deskripsi: "Merupakan kegiatan sossialisasi dan pengembangan jaringan antar mahasiswa FMIKOM.",
-    image: "/images/dokumentasi/fmikom_connect.jpg",
+    image: "/images/dokumentasi/fmikom_conncet.JPG",
   }
 ]
