@@ -1,10 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react"
 
 interface Props {
   nama: string
   jabatan: string
   prodi?: string
   foto: string
+  /** true untuk Ketua / Wakil */
+  priority?: boolean
 }
 
 export default function OrgCard({
@@ -12,7 +15,10 @@ export default function OrgCard({
   jabatan,
   prodi,
   foto,
+  priority = false,
 }: Props) {
+  const [loaded, setLoaded] = useState(false)
+
   return (
     <Card
       className="
@@ -28,15 +34,34 @@ export default function OrgCard({
       <CardContent className="relative z-10 p-6">
 
         {/* Foto */}
-        <img
-          src={foto}
-          alt={nama}
-          className="
-            mx-auto mb-4 h-24 w-24 rounded-full object-cover
-            border-2 border-yellow-300/70
-            bg-white/20
-          "
-        />
+        <div className="relative mx-auto mb-4 h-24 w-24">
+          {/* Placeholder */}
+          {!loaded && (
+            <div
+              className="
+                absolute inset-0 rounded-full
+                bg-white/20 animate-pulse
+              "
+            />
+          )}
+
+          <img
+            src={foto}
+            alt={nama}
+            width={96}
+            height={96}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            className={`
+              h-24 w-24 rounded-full object-cover
+              border-2 border-yellow-300/70
+              bg-white/20
+              transition-opacity duration-300
+              ${loaded ? "opacity-100" : "opacity-0"}
+            `}
+          />
+        </div>
 
         {/* Nama */}
         <h3 className="font-semibold text-white">

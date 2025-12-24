@@ -21,21 +21,27 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
+    const sections = navItems.map((item) => ({
+      href: item.href,
+      el: document.querySelector(item.href),
+    }))
+
     const onScroll = () => {
       setScrolled(window.scrollY > 30)
 
-      navItems.forEach((item) => {
-        const section = document.querySelector(item.href)
-        if (!section) return
-
-        const rect = section.getBoundingClientRect()
+      for (const item of sections) {
+        if (!item.el) continue
+        const rect = item.el.getBoundingClientRect()
         if (rect.top <= 120 && rect.bottom >= 120) {
           setActive(item.href)
+          break
         }
-      })
+      }
     }
 
-    window.addEventListener("scroll", onScroll)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    onScroll()
+
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
@@ -49,12 +55,16 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img
-            src="/images/bemFM.jpg"
+            src="/images/bemFM.webp"
             alt="Logo BEM"
+            width={40}
+            height={40}
+            loading="eager"
+            decoding="async"
             className="h-10 w-10 rounded-full border border-yellow-400"
           />
           <div className="leading-tight">
-            <p className="font-bold text-sm text-slate-900">
+            <p className="text-sm font-bold text-slate-900">
               BEM FMIKOM
             </p>
             <p className="text-xs text-slate-600">
@@ -93,20 +103,27 @@ export default function Navbar() {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="bg-white">
+          <SheetContent
+            side="right"
+            className="navbar-glass border-l border-white/30 h-full w-64 px-6 py-5"
+          >
             {/* Header Mobile */}
-            <div className="flex items-center gap-3 border-b pb-4">
+            <div className="flex items-center gap-3 border-b border-white/20 pb-4">
               <img
                 src="/images/bemFM.webp"
                 alt="Logo"
+                width={40}
+                height={40}
+                loading="eager"
+                decoding="async"
                 className="h-10 w-10 rounded-full border"
               />
               <div>
                 <p className="font-semibold text-slate-900">
                   BEM FMIKOM
                 </p>
-                <p className="text-xs text-slate-500">
-                  Fakultas Ilmu Komputer
+                <p className="text-xs text-slate-600">
+                  Fakultas Ilmu Komputer dan Matematika
                 </p>
               </div>
             </div>
@@ -121,8 +138,8 @@ export default function Navbar() {
                   className={`rounded-md px-4 py-3 text-base font-medium transition
                     ${
                       active === item.href
-                        ? "bg-yellow-100 text-yellow-700"
-                        : "text-slate-700 hover:bg-slate-100"
+                        ? "bg-yellow-300/20 text-yellow-700"
+                        : "text-slate-800 hover:bg-white/30"
                     }`}
                 >
                   {item.label}
