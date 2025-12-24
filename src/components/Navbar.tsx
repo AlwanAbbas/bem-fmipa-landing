@@ -97,7 +97,7 @@ export default function Navbar() {
             {/* Header Mobile */}
             <div className="flex items-center gap-3 border-b pb-4">
               <img
-                src="../src/assets/images/bemFM.webp"
+                src="/images/bemFM.webp"
                 alt="Logo"
                 className="h-10 w-10 rounded-full border"
               />
